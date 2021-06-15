@@ -60,8 +60,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            #Path.path.join(BASE_DIR, 'templates'),
-            #Path.path.join(BASE_DIR, 'templates', 'allauth'),
+            #os.path.join(BASE_DIR, 'templates'),
+            #os.path.join(BASE_DIR, 'templates', 'allauth'),
             BASE_DIR.joinpath('templates'),
             BASE_DIR.joinpath('templates', 'allauth'),
         ],
@@ -148,6 +148,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (BASE_DIR.joinpath('static'),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.joinpath('media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
